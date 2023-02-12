@@ -1,0 +1,17 @@
+initial:
+0
+
+terminals:
+1 IDENT
+3 STRING
+4 NUMBER
+
+transitions:
+0 0 skip \s \t \r \n
+0 1 push a-z A-Z
+1 1 push a-z A-Z
+0 2 skip "
+2 2 push !"
+2 3 skip "
+0 4 push 0-9
+4 4 push 0-9
